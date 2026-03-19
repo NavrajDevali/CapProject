@@ -9,8 +9,8 @@ export default async function globalSetup() {
 
   const res = await req.post('/auth/login', {
     data: {
-      username: process.env.USER || 'emilys',
-      password: process.env.PASS || 'emilyspass',
+      username: process.env.DUMMYJSON_USERNAME || 'emilys',
+      password: process.env.DUMMYJSON_PASSWORD || 'emilyspass',
     },
   });
 
