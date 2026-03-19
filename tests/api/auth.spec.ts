@@ -3,8 +3,8 @@ import { test, expect } from '@playwright/test';
 const BASE_URL = process.env.API_BASE || 'https://dummyjson.com';
 
 const VALID_USER = {
-  username: process.env.USER || 'emilys',
-  password: process.env.PASS || 'emilyspass',
+  username: process.env.DUMMYJSON_USERNAME || 'emilys',
+  password: process.env.DUMMYJSON_PASSWORD || 'emilyspass',
 };
 
 // Helper — login and return parsed body

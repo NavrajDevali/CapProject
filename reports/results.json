@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 3
     },
     "preserveOutput": "always",
     "projects": [
@@ -20,7 +20,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 3
         },
         "id": "",
         "name": "",
@@ -70,6 +70,617 @@
   },
   "suites": [
     {
+      "title": "api\\auth.spec.ts",
+      "file": "api/auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Auth — Minimal but Complete",
+          "file": "api/auth.spec.ts",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "@smoke login returns 200 with access & refresh tokens",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1726,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:19.228Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-00bd34830e0260c0ec2c",
+              "file": "api/auth.spec.ts",
+              "line": 21,
+              "column": 7
+            },
+            {
+              "title": "accessToken looks like a JWT (3 parts, base64url-safe)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 362,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:20.986Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-ae12d9dbcc0cc662d9a9",
+              "file": "api/auth.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "@smoke can call /auth/me with access token",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 693,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:21.378Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-ec2f168565691f2218b1",
+              "file": "api/auth.spec.ts",
+              "line": 46,
+              "column": 7
+            },
+            {
+              "title": "refresh returns new token that works on /auth/me",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1406,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:22.098Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-c55a97de7c9bd3a37281",
+              "file": "api/auth.spec.ts",
+              "line": 60,
+              "column": 7
+            },
+            {
+              "title": "wrong password → 400 with error message",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 358,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:23.525Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-f9c09b65770383377999",
+              "file": "api/auth.spec.ts",
+              "line": 81,
+              "column": 7
+            },
+            {
+              "title": "protected route without token → 401",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1434,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:23.897Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-6dea95e4b3d2c8e3cf1c",
+              "file": "api/auth.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "tampered token → 401/500 (provider-dependent)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 400,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:25.347Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "6bead371ebbc451c1152-3227a40cfde5c4b6d951",
+              "file": "api/auth.spec.ts",
+              "line": 95,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api\\products.spec.ts",
+      "file": "api/products.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "@regression @api Products API — Minimal Suite",
+          "file": "api/products.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "@smoke GET all products returns a non-empty list",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 340,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:19.286Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-dee441de568eaf233394",
+              "file": "api/products.spec.ts",
+              "line": 8,
+              "column": 7
+            },
+            {
+              "title": "@smoke GET product by id returns correct schema",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 81,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:19.667Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-b5366cc4af0aa6aaec8f",
+              "file": "api/products.spec.ts",
+              "line": 17,
+              "column": 7
+            },
+            {
+              "title": "GET products with pagination returns limited set",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 343,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:19.777Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-f0b9fd99e4ff043804c1",
+              "file": "api/products.spec.ts",
+              "line": 26,
+              "column": 7
+            },
+            {
+              "title": "GET products by category returns items only from that category",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 331,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:20.158Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-ce7103a4574ca604dd0b",
+              "file": "api/products.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "CREATE a product returns the created resource",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 401,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:20.507Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-687965fe29ef7255a738",
+              "file": "api/products.spec.ts",
+              "line": 45,
+              "column": 7
+            },
+            {
+              "title": "UPDATE a product updates fields",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1117,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:20.921Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-e2dc8aa60fa4ac08b004",
+              "file": "api/products.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "DELETE a product marks it deleted",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 333,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:22.054Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-da28236331cbd3fd2423",
+              "file": "api/products.spec.ts",
+              "line": 64,
+              "column": 7
+            },
+            {
+              "title": "GET non-existent product returns 404 with error schema",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 321,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:22.401Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-2f453e2b9662f38e8eab",
+              "file": "api/products.spec.ts",
+              "line": 73,
+              "column": 7
+            },
+            {
+              "title": "all products in list match schema (smoke integrity)",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 341,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:22.742Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "dfce396d90f6eddde967-ea0d4222edf58ff71d04",
+              "file": "api/products.spec.ts",
+              "line": 82,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "api\\users.spec.ts",
       "file": "api/users.spec.ts",
       "column": 0,
@@ -99,15 +710,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 159,
+                      "duration": 354,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:37.042Z",
+                      "startTime": "2026-03-19T16:58:19.324Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -137,15 +748,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 295,
+                      "duration": 373,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:37.231Z",
+                      "startTime": "2026-03-19T16:58:19.717Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -156,6 +767,43 @@
               "id": "fe1b24ca564ee32ce980-d62c80c40262410423d9",
               "file": "api/users.spec.ts",
               "line": 17,
+              "column": 7
+            },
+            {
+              "title": "GET all users responds within acceptable performance",
+              "ok": true,
+              "tags": [
+                "regression",
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 78,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-19T16:58:20.112Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "fe1b24ca564ee32ce980-9edc70d38ac95d8aca2b",
+              "file": "api/users.spec.ts",
+              "line": 26,
               "column": 7
             },
             {
@@ -174,15 +822,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 381,
+                      "duration": 378,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:37.544Z",
+                      "startTime": "2026-03-19T16:58:20.231Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -192,7 +840,7 @@
               ],
               "id": "fe1b24ca564ee32ce980-4c1f78c6b711aadd179d",
               "file": "api/users.spec.ts",
-              "line": 26,
+              "line": 36,
               "column": 7
             },
             {
@@ -211,15 +859,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 291,
+                      "duration": 349,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:37.955Z",
+                      "startTime": "2026-03-19T16:58:20.629Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -229,7 +877,7 @@
               ],
               "id": "fe1b24ca564ee32ce980-0b5de5858da4bd85fccc",
               "file": "api/users.spec.ts",
-              "line": 38,
+              "line": 48,
               "column": 7
             },
             {
@@ -248,15 +896,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 307,
+                      "duration": 337,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:38.258Z",
+                      "startTime": "2026-03-19T16:58:20.997Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -266,7 +914,7 @@
               ],
               "id": "fe1b24ca564ee32ce980-53ee0559dba0af68667d",
               "file": "api/users.spec.ts",
-              "line": 46,
+              "line": 56,
               "column": 7
             },
             {
@@ -285,15 +933,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 289,
+                      "duration": 334,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:38.577Z",
+                      "startTime": "2026-03-19T16:58:21.354Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -303,7 +951,7 @@
               ],
               "id": "fe1b24ca564ee32ce980-f0289a7a4c2803757850",
               "file": "api/users.spec.ts",
-              "line": 55,
+              "line": 65,
               "column": 7
             },
             {
@@ -322,15 +970,15 @@
                   "projectName": "",
                   "results": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "passed",
-                      "duration": 291,
+                      "duration": 674,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-03-18T08:53:38.879Z",
+                      "startTime": "2026-03-19T16:58:21.704Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -340,7 +988,7 @@
               ],
               "id": "fe1b24ca564ee32ce980-98323ad7cda4e97e3c26",
               "file": "api/users.spec.ts",
-              "line": 67,
+              "line": 77,
               "column": 7
             }
           ]
@@ -350,9 +998,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-18T08:53:33.530Z",
-    "duration": 5715.371,
-    "expected": 7,
+    "startTime": "2026-03-19T16:58:15.002Z",
+    "duration": 10828.001,
+    "expected": 24,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

@@ -14,8 +14,8 @@ jobs:
 
     env:
       BASE_URL: ${{ secrets.BASE_URL }}
-      USERNAME: ${{ secrets.DUMMYJSON_USERNAME }}
-      PASSWORD: ${{ secrets.DUMMYJSON_PASSWORD }}
+      DUMMYJSON_USERNAME: ${{ secrets.DUMMYJSON_USERNAME }}
+      DUMMYJSON_PASSWORD: ${{ secrets.DUMMYJSON_PASSWORD }}
 
     steps:
       # ── 1. Checkout ────────────────────────────────────────────────────────

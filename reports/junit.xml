@@ -1,18 +1,56 @@
-<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="5.715371">
-<testsuite name="api\users.spec.ts" timestamp="2026-03-18T08:53:35.061Z" hostname="" tests="7" failures="0" skipped="0" time="2.013" errors="0">
-<testcase name="@regression @api Users API — Minimal Suite › @smoke GET all users returns a non-empty list" classname="api\users.spec.ts" time="0.159">
+<testsuites id="" name="" tests="24" failures="0" skipped="0" errors="0" time="10.828001">
+<testsuite name="api\auth.spec.ts" timestamp="2026-03-19T16:58:16.670Z" hostname="" tests="7" failures="0" skipped="0" time="6.379" errors="0">
+<testcase name="Auth — Minimal but Complete › @smoke login returns 200 with access &amp; refresh tokens" classname="api\auth.spec.ts" time="1.726">
 </testcase>
-<testcase name="@regression @api Users API — Minimal Suite › @smoke GET user by id satisfies user schema" classname="api\users.spec.ts" time="0.295">
+<testcase name="Auth — Minimal but Complete › accessToken looks like a JWT (3 parts, base64url-safe)" classname="api\auth.spec.ts" time="0.362">
 </testcase>
-<testcase name="@regression @api Users API — Minimal Suite › CREATE a user returns the created resource" classname="api\users.spec.ts" time="0.381">
+<testcase name="Auth — Minimal but Complete › @smoke can call /auth/me with access token" classname="api\auth.spec.ts" time="0.693">
 </testcase>
-<testcase name="@regression @api Users API — Minimal Suite › UPDATE (PUT) modifies fields as requested" classname="api\users.spec.ts" time="0.291">
+<testcase name="Auth — Minimal but Complete › refresh returns new token that works on /auth/me" classname="api\auth.spec.ts" time="1.406">
 </testcase>
-<testcase name="@regression @api Users API — Minimal Suite › DELETE marks user as deleted" classname="api\users.spec.ts" time="0.307">
+<testcase name="Auth — Minimal but Complete › wrong password → 400 with error message" classname="api\auth.spec.ts" time="0.358">
 </testcase>
-<testcase name="@regression @api Users API — Minimal Suite › SEARCH users by name returns results" classname="api\users.spec.ts" time="0.289">
+<testcase name="Auth — Minimal but Complete › protected route without token → 401" classname="api\auth.spec.ts" time="1.434">
 </testcase>
-<testcase name="@regression @api Users API — Minimal Suite › GET non-existent user returns 404 with error schema" classname="api\users.spec.ts" time="0.291">
+<testcase name="Auth — Minimal but Complete › tampered token → 401/500 (provider-dependent)" classname="api\auth.spec.ts" time="0.4">
+</testcase>
+</testsuite>
+<testsuite name="api\products.spec.ts" timestamp="2026-03-19T16:58:16.670Z" hostname="" tests="9" failures="0" skipped="0" time="3.608" errors="0">
+<testcase name="@regression @api Products API — Minimal Suite › @smoke GET all products returns a non-empty list" classname="api\products.spec.ts" time="0.34">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › @smoke GET product by id returns correct schema" classname="api\products.spec.ts" time="0.081">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › GET products with pagination returns limited set" classname="api\products.spec.ts" time="0.343">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › GET products by category returns items only from that category" classname="api\products.spec.ts" time="0.331">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › CREATE a product returns the created resource" classname="api\products.spec.ts" time="0.401">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › UPDATE a product updates fields" classname="api\products.spec.ts" time="1.117">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › DELETE a product marks it deleted" classname="api\products.spec.ts" time="0.333">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › GET non-existent product returns 404 with error schema" classname="api\products.spec.ts" time="0.321">
+</testcase>
+<testcase name="@regression @api Products API — Minimal Suite › all products in list match schema (smoke integrity)" classname="api\products.spec.ts" time="0.341">
+</testcase>
+</testsuite>
+<testsuite name="api\users.spec.ts" timestamp="2026-03-19T16:58:16.670Z" hostname="" tests="8" failures="0" skipped="0" time="2.877" errors="0">
+<testcase name="@regression @api Users API — Minimal Suite › @smoke GET all users returns a non-empty list" classname="api\users.spec.ts" time="0.354">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › @smoke GET user by id satisfies user schema" classname="api\users.spec.ts" time="0.373">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › GET all users responds within acceptable performance" classname="api\users.spec.ts" time="0.078">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › CREATE a user returns the created resource" classname="api\users.spec.ts" time="0.378">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › UPDATE (PUT) modifies fields as requested" classname="api\users.spec.ts" time="0.349">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › DELETE marks user as deleted" classname="api\users.spec.ts" time="0.337">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › SEARCH users by name returns results" classname="api\users.spec.ts" time="0.334">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › GET non-existent user returns 404 with error schema" classname="api\users.spec.ts" time="0.674">
 </testcase>
 </testsuite>
 </testsuites>
