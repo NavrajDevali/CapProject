@@ -22,6 +22,16 @@ test.describe('@regression @api Users API — Minimal Suite', () => {
     assertSchema(validateUser, body, 'GET /users/1');
   });
 
+  
+  test('GET all users responds within acceptable performance', async ({ usersApi }) => {
+    const start = Date.now();
+    const res = await usersApi.getAll();
+    const duration = Date.now() - start;
+
+    expect(res.status()).toBe(200);
+    expect(duration).toBeLessThan(800); // performance threshold
+  });
+
   // ── CRUD (keep one full update path) ───────────
   test('CREATE a user returns the created resource', async ({ usersApi }) => {
     const payload = dataFactory.user();
