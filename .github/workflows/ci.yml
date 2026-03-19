@@ -67,7 +67,7 @@ jobs:
         uses: dorny/test-reporter@v1
         with:
           name: Playwright API Results
-          path: playwright-report/results.xml   # JUnit file from your config
+          path: playwright-report/junit.xml   # JUnit file from your config
           reporter: java-junit
           fail-on-error: false
 
