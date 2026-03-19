@@ -1,0 +1,81 @@
+name: CapProject
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  test:
+    name: Playwright API Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      USERNAME: ${{ secrets.DUMMYJSON_USERNAME }}
+      PASSWORD: ${{ secrets.DUMMYJSON_PASSWORD }}
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Node setup ──────────────────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm            # caches node_modules between runs
+
+      # ── 3. Install dependencies ────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci
+
+      # ── 4. Playwright browsers ─────────────────────────────────────────────
+      # API-only tests only need chromium for the request context;
+      # --with-deps installs the OS-level libs needed on ubuntu-latest.
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      # ── 5. Run smoke suite first ───────────────────────────────────────────
+      # Fast gate: if smoke fails, skip the full suite and fail fast.
+      - name: Run smoke tests
+        run: npx playwright test --grep @smoke
+        continue-on-error: false
+
+      # ── 6. Full test suite ─────────────────────────────────────────────────
+      - name: Run full API test suite
+        run: npm test
+
+      # ── 7. Upload HTML + JUnit reports as CI artifact ──────────────────────
+      # Artifacts are kept for 30 days and downloadable from the Actions UI.
+      - name: Upload Playwright HTML report
+        if: always()                 # upload even when tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: pw-report-${{ github.run_number }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+      # ── 8. Publish JUnit results to GitHub's test summary ──────────────────
+      - name: Publish test results summary
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Playwright API Results
+          path: playwright-report/results.xml   # JUnit file from your config
+          reporter: java-junit
+          fail-on-error: false
+
+      # ── 9. Upload JSON report (for dashboard / downstream processing) ───────
+      - name: Upload JSON report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pw-json-report-${{ github.run_number }}
+          path: playwright-report/results.json
+          retention-days: 30

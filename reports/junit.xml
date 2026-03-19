@@ -1,0 +1,18 @@
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="5.715371">
+<testsuite name="api\users.spec.ts" timestamp="2026-03-18T08:53:35.061Z" hostname="" tests="7" failures="0" skipped="0" time="2.013" errors="0">
+<testcase name="@regression @api Users API — Minimal Suite › @smoke GET all users returns a non-empty list" classname="api\users.spec.ts" time="0.159">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › @smoke GET user by id satisfies user schema" classname="api\users.spec.ts" time="0.295">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › CREATE a user returns the created resource" classname="api\users.spec.ts" time="0.381">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › UPDATE (PUT) modifies fields as requested" classname="api\users.spec.ts" time="0.291">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › DELETE marks user as deleted" classname="api\users.spec.ts" time="0.307">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › SEARCH users by name returns results" classname="api\users.spec.ts" time="0.289">
+</testcase>
+<testcase name="@regression @api Users API — Minimal Suite › GET non-existent user returns 404 with error schema" classname="api\users.spec.ts" time="0.291">
+</testcase>
+</testsuite>
+</testsuites>
